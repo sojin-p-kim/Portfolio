@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rover GUI &amp; Facial Recognition — Sojin Kim</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}:root{--bg:#f8f9fa;--bg-card:#fff;--text:#111827;--text-mid:#4b5563;--text-light:#9ca3af;--accent:#6366f1;--accent-light:#eef2ff;--border:#e5e7eb;--radius:12px;--shadow-lg:0 10px 25px rgba(0,0,0,.07);--font:'Inter',system-ui,sans-serif}html{font-size:16px}body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.nav{position:sticky;top:0;z-index:50;background:rgba(248,249,250,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.85rem 0}.nav-inner{max-width:860px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}.nav-name{font-weight:700;font-size:1rem;color:var(--text)}.back-link{font-size:.875rem;font-weight:500;color:var(--text-mid);display:inline-flex;align-items:center;gap:.3rem}.back-link:hover{color:var(--text);text-decoration:none}.project-page{max-width:860px;margin:0 auto;padding:3rem 2rem 4rem}.project-page h1{font-size:2.2rem;font-weight:800;line-height:1.25;margin-bottom:.6rem}.project-meta{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;margin-bottom:2rem}.project-meta .meta-item{font-size:.85rem;color:var(--text-light)}.project-hero-img{width:100%;border-radius:var(--radius);margin-bottom:2rem;box-shadow:var(--shadow-lg);max-height:450px;object-fit:contain;background:#fff}.project-page h2{font-size:1.3rem;font-weight:700;margin:2.5rem 0 .8rem;padding-top:1rem;border-top:1px solid var(--border)}.project-page h2:first-of-type{border-top:none;padding-top:0}.project-page p{color:var(--text-mid);margin-bottom:1rem;max-width:68ch;line-height:1.75}.project-page ul{color:var(--text-mid);padding-left:1.3rem;margin-bottom:1rem}.project-page ul li+li{margin-top:.4rem}.project-page ul li{line-height:1.65}.tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:2rem}.tag{font-size:.72rem;font-weight:600;padding:.25rem .65rem;border-radius:20px;background:var(--accent-light);color:var(--accent)}footer{max-width:860px;margin:0 auto;padding:2rem;text-align:center;font-size:.78rem;color:var(--text-light);border-top:1px solid var(--border)}@media(max-width:768px){.project-page{padding:2rem 1.5rem 3rem}.project-page h1{font-size:1.7rem}}</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner"><a href="../" class="nav-name">Sojin Kim</a><a href="../#projects" class="back-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>All projects</a></div></nav>
+
+<article class="project-page">
+  <h1>Rover GUI &amp; Facial Recognition</h1>
+  <div class="project-meta">
+    <span class="meta-item">Wisconsin Robotics · UW–Madison · 2025–2026</span>
+    <span class="meta-item">·</span>
+    <span class="meta-item">12th place at 2026 University Rover Challenge</span>
+  </div>
+  <div class="tags"><span class="tag">ROS</span><span class="tag">roslibjs</span><span class="tag">WebSockets</span><span class="tag">OpenCV</span><span class="tag">Python</span><span class="tag">Raspberry Pi</span><span class="tag">JavaScript</span></div>
+
+  <img class="project-hero-img" src="../images/rover.jpg" alt="Wisconsin Robotics team at URC 2026 in Utah" style="object-fit:cover">
+
+  <h2>Overview</h2>
+  <p>As a software engineer on the Wisconsin Robotics team at UW–Madison, I developed two key systems for the University Rover Challenge (URC). The URC is an international competition organized by the Mars Society at the Mars Desert Research Station in Hanksville, Utah, where student-built rovers tackle missions simulating future Mars exploration — including soil analysis, equipment servicing, autonomous navigation, and sample retrieval.</p>
+  <p>Our team of ~60 members — mechanical engineers, electrical engineers, computer scientists, physicists, and biologists — placed 12th out of 38 finalists and 102 teams worldwide, a new team record.</p>
+
+  <h2>Web-based control GUI</h2>
+  <ul>
+    <li>Developed a custom web-based GUI for real-time robot control and monitoring</li>
+    <li>Integrated ROS topics through roslibjs and rosbridge WebSockets for live command publishing, sensor visualization, and interactive operation</li>
+    <li>Operators could control the rover from any browser with no local ROS installation required</li>
+    <li>The GUI supported multiple mission profiles — arm manipulation, autonomous waypoint navigation, and science instrument control</li>
+  </ul>
+
+  <h2>Facial recognition system</h2>
+  <ul>
+    <li>Built a Raspberry Pi-based facial recognition system using OpenCV and Python</li>
+    <li>Performed real-time face detection and identity verification for the autonomy mission tasks</li>
+    <li>Optimized for low-power embedded hardware while maintaining real-time frame rates in desert field conditions</li>
+  </ul>
+
+  <h2>Competition</h2>
+  <p>The URC tests rovers across four missions: science (soil sampling and life detection), equipment servicing (repairing a mock astronaut lander), extreme retrieval (recovering geological samples from up to 1 km away), and autonomous navigation (traversing rock fields to find markers). Every mission demands tight coordination between software operators and the mechanical platform.</p>
+
+  <p style="margin-top:1.5rem"><a href="https://www.youtube.com/watch?v=fZ5lqiTug2U" target="_blank" rel="noopener">Watch our competition run on YouTube →</a></p>
+</article>
+<footer><p>&copy; 2026 Sojin Kim</p></footer>
+</body>
+</html>
