@@ -3,333 +3,192 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sojin Kim — Robotics & Biomechanics Researcher</title>
-<meta name="description" content="Portfolio of Sojin Kim — mechanical engineering researcher working on bipedal robot state estimation, wearable sensors, and exoskeletons for mobility.">
+<title>Sojin Kim | Robotics &amp; Biomechanics</title>
+<meta name="description" content="Sojin Kim — mechanical engineering researcher working on wearable sensors, bipedal robot state estimation, and exoskeletons.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 
-:root {
-  --ink: #1a1d23;
-  --ink-soft: #4a4e58;
-  --ink-muted: #7b7f8a;
-  --surface: #fafafa;
-  --surface-alt: #f0f1f3;
-  --accent: #2563a0;
-  --accent-light: #e8f0f8;
-  --rule: #d8dae0;
-  --serif: 'Source Serif 4', Georgia, serif;
-  --sans: 'Inter', system-ui, sans-serif;
-  --measure: 68ch;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --ink: #e4e5e9;
-    --ink-soft: #b0b3bb;
-    --ink-muted: #7e818a;
-    --surface: #121418;
-    --surface-alt: #1b1d23;
-    --accent: #5b9fd6;
-    --accent-light: #1a2636;
-    --rule: #2a2d34;
-  }
+:root{
+  --bg:#f8f9fa;
+  --bg-card:#ffffff;
+  --text:#111827;
+  --text-mid:#4b5563;
+  --text-light:#9ca3af;
+  --accent:#6366f1;
+  --accent-light:#eef2ff;
+  --border:#e5e7eb;
+  --radius:12px;
+  --shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);
+  --shadow-lg:0 10px 25px rgba(0,0,0,.07),0 4px 10px rgba(0,0,0,.04);
+  --font:'Inter',system-ui,-apple-system,sans-serif;
 }
 
-html { font-size: 17px; scroll-behavior: smooth; }
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
 
-body {
-  font-family: var(--sans);
-  color: var(--ink);
-  background: var(--surface);
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
+/* ---- NAV ---- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(248,249,250,.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:.85rem 0;
 }
+.nav-inner{
+  max-width:1060px;margin:0 auto;padding:0 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-name{font-weight:700;font-size:1rem;color:var(--text)}
+.nav-links{display:flex;gap:1.6rem;list-style:none}
+.nav-links a{color:var(--text-mid);font-size:.875rem;font-weight:500;transition:color .15s}
+.nav-links a:hover{color:var(--text);text-decoration:none}
 
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
+/* ---- HERO ---- */
+.hero{
+  max-width:1060px;margin:0 auto;padding:5rem 2rem 4rem;
+  display:flex;align-items:center;gap:3.5rem;
+}
+.hero-photo{
+  flex-shrink:0;
+  width:220px;height:220px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid var(--bg-card);
+  box-shadow:var(--shadow-lg);
+}
+.hero-text h1{
+  font-size:2.6rem;font-weight:800;line-height:1.2;
+  margin-bottom:1rem;
+}
+.hero-text h1 .wave{display:inline-block;animation:wave 2.5s infinite;transform-origin:70% 70%}
+@keyframes wave{0%,60%,100%{transform:rotate(0)}10%{transform:rotate(14deg)}20%{transform:rotate(-8deg)}30%{transform:rotate(14deg)}40%{transform:rotate(-4deg)}50%{transform:rotate(10deg)}}
 
-/* ---------- LAYOUT ---------- */
-.wrap {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 2rem;
+.hero-text p{
+  font-size:1.12rem;color:var(--text-mid);max-width:52ch;line-height:1.7;
+  margin-bottom:1.5rem;
 }
+.hero-buttons{display:flex;flex-wrap:wrap;gap:.6rem}
+.btn{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-size:.85rem;font-weight:600;
+  padding:.55rem 1.1rem;border-radius:8px;
+  transition:all .15s;
+}
+.btn-primary{background:var(--accent);color:#fff;border:none}
+.btn-primary:hover{background:#4f46e5;text-decoration:none}
+.btn-outline{border:1px solid var(--border);color:var(--text-mid);background:var(--bg-card)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.btn svg{width:16px;height:16px}
 
-/* ---------- NAV ---------- */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: var(--surface);
-  border-bottom: 1px solid var(--rule);
-  padding: 0.9rem 0;
-}
-nav .wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-nav .name {
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: var(--ink);
-}
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.8rem;
-}
-nav a {
-  color: var(--ink-soft);
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-}
-nav a:hover { color: var(--ink); text-decoration: none; }
+/* ---- SECTIONS ---- */
+.section{max-width:1060px;margin:0 auto;padding:3rem 2rem}
+.section-title{font-size:1.65rem;font-weight:800;margin-bottom:2rem}
 
-/* ---------- HERO ---------- */
-.hero {
-  padding: 6rem 0 4rem;
-}
-.hero h1 {
-  font-family: var(--serif);
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1.15;
-  margin-bottom: 1.2rem;
-}
-.hero .tagline {
-  font-size: 1.15rem;
-  color: var(--ink-soft);
-  max-width: 56ch;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-}
-.hero .links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-.hero .links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.85rem;
-  font-weight: 500;
-  padding: 0.45rem 1rem;
-  border: 1px solid var(--rule);
-  border-radius: 6px;
-  color: var(--ink-soft);
-  transition: border-color 0.15s, color 0.15s;
-}
-.hero .links a:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  text-decoration: none;
-}
-.hero .links svg { width: 16px; height: 16px; flex-shrink: 0; }
+/* ---- PROJECTS ---- */
+.project-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem}
 
-/* ---------- SECTIONS ---------- */
-section { padding: 3.5rem 0; }
-
-.section-label {
-  font-family: var(--serif);
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-bottom: 1.8rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--ink);
-  display: inline-block;
+.project-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:1.6rem;
+  transition:box-shadow .2s,transform .2s;
+  display:flex;flex-direction:column;
+}
+.project-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+.project-card .overline{
+  font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+  color:var(--accent);margin-bottom:.45rem;
+}
+.project-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.55rem;line-height:1.35}
+.project-card .desc{font-size:.88rem;color:var(--text-mid);line-height:1.6;flex:1;margin-bottom:1rem}
+.project-card .tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.tag{
+  font-size:.7rem;font-weight:600;
+  padding:.22rem .6rem;border-radius:20px;
+  background:var(--accent-light);color:var(--accent);
 }
 
-/* ---------- ABOUT ---------- */
-.about-text {
-  max-width: var(--measure);
-  color: var(--ink-soft);
-  font-size: 1rem;
-  line-height: 1.75;
+/* ---- SKILLS ---- */
+.skills-cloud{display:flex;flex-wrap:wrap;gap:.5rem}
+.skill-pill{
+  font-size:.82rem;font-weight:600;
+  padding:.4rem .9rem;border-radius:20px;
+  background:var(--bg-card);border:1px solid var(--border);
+  color:var(--text-mid);
+  transition:border-color .15s,color .15s;
 }
-.about-text p + p { margin-top: 1rem; }
+.skill-pill:hover{border-color:var(--accent);color:var(--accent)}
 
-/* ---------- EDUCATION ---------- */
-.edu-grid {
-  display: grid;
-  gap: 1.5rem;
+/* ---- EXPERIENCE (TIMELINE) ---- */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{
+  content:'';position:absolute;left:6px;top:6px;bottom:6px;
+  width:2px;background:var(--border);
 }
-.edu-item {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 0.3rem;
-  align-items: baseline;
+.tl-item{position:relative;padding-bottom:2.2rem}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{
+  position:absolute;left:-2rem;top:5px;
+  width:14px;height:14px;border-radius:50%;
+  background:var(--accent);border:3px solid var(--bg);
 }
-.edu-item .degree {
-  font-weight: 600;
-  font-size: 1.05rem;
-}
-.edu-item .year {
-  font-size: 0.9rem;
-  color: var(--ink-muted);
-  text-align: right;
-}
-.edu-item .school {
-  color: var(--ink-soft);
-  font-size: 0.95rem;
-  grid-column: 1 / -1;
-}
+.tl-item .role{font-weight:700;font-size:1rem}
+.tl-item .org{color:var(--text-mid);font-size:.92rem;margin-bottom:.15rem}
+.tl-item .dates{font-size:.8rem;color:var(--text-light);margin-bottom:.5rem}
+.tl-item .tl-details{font-size:.88rem;color:var(--text-mid);padding-left:1.1rem}
+.tl-item .tl-details li+li{margin-top:.25rem}
 
-/* ---------- PROJECT CARDS ---------- */
-.projects-grid {
-  display: grid;
-  gap: 2.5rem;
+/* ---- EDUCATION ---- */
+.edu-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+.edu-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:1.4rem;
 }
+.edu-card .degree{font-weight:700;font-size:1rem;margin-bottom:.2rem}
+.edu-card .school{color:var(--text-mid);font-size:.92rem}
+.edu-card .year{font-size:.8rem;color:var(--text-light);margin-top:.3rem}
 
-.project {
-  background: var(--surface-alt);
-  border-radius: 10px;
-  padding: 2rem 2.2rem;
-  border: 1px solid var(--rule);
-}
-.project .overline {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-}
-.project h3 {
-  font-family: var(--serif);
-  font-size: 1.35rem;
-  font-weight: 600;
-  line-height: 1.3;
-  margin-bottom: 0.8rem;
-}
-.project .desc {
-  color: var(--ink-soft);
-  font-size: 0.95rem;
-  max-width: var(--measure);
-  margin-bottom: 1.2rem;
-}
-.project .tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-.project .tag {
-  font-size: 0.75rem;
-  font-weight: 500;
-  padding: 0.25rem 0.65rem;
-  border-radius: 4px;
-  background: var(--accent-light);
-  color: var(--accent);
-}
-.project .highlights {
-  margin-top: 1rem;
-  padding-left: 1.2rem;
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-}
-.project .highlights li + li { margin-top: 0.35rem; }
+/* ---- CONTACT ---- */
+.contact-section p{color:var(--text-mid);max-width:52ch;margin-bottom:1.2rem;font-size:1rem}
+.contact-links{display:flex;flex-wrap:wrap;gap:1rem;font-size:.95rem}
+.contact-links a{display:inline-flex;align-items:center;gap:.4rem}
 
-/* ---------- EXPERIENCE ---------- */
-.exp-list { display: grid; gap: 2rem; }
-
-.exp {
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: 0 2rem;
-}
-.exp .dates {
-  font-size: 0.85rem;
-  color: var(--ink-muted);
-  padding-top: 0.15rem;
-}
-.exp .role { font-weight: 600; font-size: 1.02rem; }
-.exp .org { color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 0.5rem; }
-.exp .details {
-  font-size: 0.9rem;
-  color: var(--ink-soft);
-  padding-left: 1.1rem;
-}
-.exp .details li + li { margin-top: 0.3rem; }
-
-/* ---------- SKILLS ---------- */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-}
-.skill-group h4 {
-  font-weight: 600;
-  font-size: 0.9rem;
-  margin-bottom: 0.6rem;
-  color: var(--ink);
-}
-.skill-group p {
-  font-size: 0.88rem;
-  color: var(--ink-soft);
-  line-height: 1.6;
+/* ---- FOOTER ---- */
+footer{
+  max-width:1060px;margin:0 auto;padding:2.5rem 2rem 2rem;
+  text-align:center;font-size:.78rem;color:var(--text-light);
+  border-top:1px solid var(--border);margin-top:2rem;
 }
 
-/* ---------- PUBLICATIONS ---------- */
-.pub {
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--rule);
-  color: var(--ink-soft);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-.pub:last-child { border-bottom: none; }
-.pub .pub-title { font-weight: 600; color: var(--ink); }
-
-/* ---------- CONTACT ---------- */
-.contact-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  font-size: 0.95rem;
-}
-.contact-row a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-/* ---------- FOOTER ---------- */
-footer {
-  padding: 3rem 0 2rem;
-  text-align: center;
-  color: var(--ink-muted);
-  font-size: 0.8rem;
-  border-top: 1px solid var(--rule);
-  margin-top: 2rem;
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 700px) {
-  html { font-size: 16px; }
-  .hero { padding: 4rem 0 2.5rem; }
-  .hero h1 { font-size: 2.2rem; }
-  .wrap { padding: 0 1.2rem; }
-  .exp { grid-template-columns: 1fr; gap: 0.2rem; }
-  .exp .dates { padding-bottom: 0.2rem; }
-  nav ul { gap: 1rem; }
-  .project { padding: 1.5rem; }
+/* ---- MOBILE ---- */
+@media(max-width:768px){
+  .hero{flex-direction:column;text-align:center;gap:2rem;padding:3.5rem 1.5rem 2.5rem}
+  .hero-photo{width:160px;height:160px}
+  .hero-text h1{font-size:2rem}
+  .hero-text p{margin-left:auto;margin-right:auto}
+  .hero-buttons{justify-content:center}
+  .section{padding:2.5rem 1.5rem}
+  .project-grid{grid-template-columns:1fr}
+  .nav-inner{padding:0 1.2rem}
+  .nav-links{gap:1rem}
 }
 </style>
 </head>
-
 <body>
 
 <!-- NAV -->
-<nav>
-  <div class="wrap">
-    <span class="name">Sojin Kim</span>
-    <ul>
-      <li><a href="#about">About</a></li>
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="nav-name">Sojin Kim</span>
+    <ul class="nav-links">
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -337,285 +196,288 @@ footer {
 </nav>
 
 <!-- HERO -->
-<header class="hero">
-  <div class="wrap">
-    <h1>Sojin Kim</h1>
-    <p class="tagline">Mechanical engineering researcher building sensor-based systems for human and robot motion — from wearable IMUs and state estimators to exoskeletons that help people walk.</p>
-    <div class="links">
-      <a href="mailto:Sojin.park.Kim@gmail.com">
+<section class="hero" id="home">
+  <img src="profile.jpg" alt="Sojin Kim" class="hero-photo">
+  <div class="hero-text">
+    <h1>Hi, I'm Sojin! <span class="wave">👋</span></h1>
+    <p>I'm a mechanical engineering researcher at <strong>IHMC</strong>, working on wearable IMU systems and bipedal robot state estimation. My goal is to build sensor-based tools that help people with mobility impairments walk — from exoskeletons to clinically deployable joint-tracking instrumentation.</p>
+    <div class="hero-buttons">
+      <a href="mailto:Sojin.park.Kim@gmail.com" class="btn btn-primary">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        Email
+        Contact me
       </a>
-      <a href="https://www.linkedin.com/in/sojin-p-kim/" target="_blank" rel="noopener">
+      <a href="https://www.linkedin.com/in/sojin-p-kim/" target="_blank" rel="noopener" class="btn btn-outline">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn
       </a>
-      <a href="https://github.com/sojin-p-kim" target="_blank" rel="noopener">
+      <a href="https://github.com/sojin-p-kim" target="_blank" rel="noopener" class="btn btn-outline">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
         GitHub
       </a>
     </div>
   </div>
-</header>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="wrap">
-    <h2 class="section-label">About</h2>
-    <div class="about-text">
-      <p>I'm a prospective mechanical engineering PhD applicant working at the intersection of robotics, biomechanics, and wearable sensing. My goal is to develop quantitative, clinically deployable methods for measuring human and robotic joint motion — particularly sensor-based, non-invasive approaches that move joint kinematics measurement outside the traditional motion-capture lab.</p>
-      <p>Currently I'm an exoskeleton intern at the Institute for Human and Machine Cognition (IHMC), where I've built a wireless IMU motion-capture system and developed a real-time state estimator for a bipedal humanoid robot. Previously I completed research on gait and bimanual coordination at the UW–Madison Motor Behavior Lab, and earned my MS in Mechanical Engineering from UW–Madison.</p>
-    </div>
-
-    <div class="edu-grid" style="margin-top: 2.5rem;">
-      <div class="edu-item">
-        <span class="degree">MS, Mechanical Engineering</span>
-        <span class="year">2024</span>
-        <span class="school">University of Wisconsin–Madison</span>
-      </div>
-      <div class="edu-item">
-        <span class="degree">BS, Biomedical Engineering</span>
-        <span class="year">2020</span>
-        <span class="school">University of Utah · Minors in Chemistry and Mathematics</span>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects">
-  <div class="wrap">
-    <h2 class="section-label">Projects</h2>
-    <div class="projects-grid">
+<section class="section" id="projects">
+  <h2 class="section-title">My projects</h2>
+  <div class="project-grid">
 
-      <!-- IMU Motion Capture -->
-      <div class="project">
-        <div class="overline">IHMC · 2026</div>
-        <h3>Wireless IMU Motion Capture System</h3>
-        <p class="desc">A four-sensor wireless IMU system that tracks lower-limb joint angles in real time. Each node pairs an ESP32C3 microcontroller with an MPU9250 9-axis IMU, streaming orientation data at 330 Hz over WiFi/UDP to a live MuJoCo skeletal model that computes hip, knee, and ankle angles with no wired connection to the body.</p>
-        <div class="tags">
-          <span class="tag">ESP32</span>
-          <span class="tag">MPU9250</span>
-          <span class="tag">Madgwick fusion</span>
-          <span class="tag">PCA calibration</span>
-          <span class="tag">MuJoCo</span>
-          <span class="tag">Python</span>
-          <span class="tag">UDP</span>
-        </div>
-        <ul class="highlights">
-          <li>Designed and fabricated compact enclosures integrating IMU, microcontroller, antenna, and power</li>
-          <li>Implemented static, functional (PCA-based axis finding), and simultaneous zero calibration pipeline</li>
-          <li>Validated knee flexion angle against OpenSim reference, showing repeatable gait-like tracking</li>
-        </ul>
+    <div class="project-card">
+      <div class="overline">IHMC · 2026</div>
+      <h3>Wireless IMU Motion Capture System</h3>
+      <p class="desc">Four-sensor wireless system that tracks lower-limb joint angles in real time at 330 Hz. ESP32 + MPU9250 nodes stream orientation over WiFi/UDP to a live MuJoCo skeletal model computing hip, knee, and ankle angles.</p>
+      <div class="tags">
+        <span class="tag">ESP32</span>
+        <span class="tag">MPU9250</span>
+        <span class="tag">Madgwick</span>
+        <span class="tag">PCA</span>
+        <span class="tag">MuJoCo</span>
+        <span class="tag">Python</span>
+        <span class="tag">UDP</span>
       </div>
-
-      <!-- InEKF State Estimator -->
-      <div class="project">
-        <div class="overline">IHMC · 2026</div>
-        <h3>Right-Invariant EKF for Humanoid Robot State Estimation</h3>
-        <p class="desc">A real-time SE₂(3)-based Right-Invariant Extended Kalman Filter for bipedal robot locomotion, fusing IMU, joint encoders, and contact constraints to estimate the full body state of the ALEX V2 humanoid during walking.</p>
-        <div class="tags">
-          <span class="tag">InEKF</span>
-          <span class="tag">SE₂(3) Lie groups</span>
-          <span class="tag">Python</span>
-          <span class="tag">MuJoCo</span>
-          <span class="tag">Signal processing</span>
-        </div>
-        <ul class="highlights">
-          <li>Built a Python replay and validation pipeline for 1 kHz walking datasets</li>
-          <li>Automated sensor verification, filter consistency testing, and estimator benchmarking</li>
-          <li>Developed a MuJoCo ground-truth simulator to validate filter performance against known kinematics</li>
-        </ul>
-      </div>
-
-      <!-- Calcaneus -->
-      <div class="project">
-        <div class="overline">Orthopedic Biomechanics Research</div>
-        <h3>Posterior Facet Landmark Identification for Subtalar Joint Analysis</h3>
-        <p class="desc">Automated identification of anatomical landmarks on the calcaneus from 3D CT-derived surface models, supporting research into subtalar joint mechanics following ankle arthrodesis in osteoarthritis patients.</p>
-        <div class="tags">
-          <span class="tag">Surface analysis</span>
-          <span class="tag">CT point clouds</span>
-          <span class="tag">MATLAB</span>
-          <span class="tag">3D visualization</span>
-        </div>
-        <ul class="highlights">
-          <li>Applied 2nd principal curvature analysis to isolate the posterior facet and locate surface extrema</li>
-          <li>Defined a coordinate system via medial-lateral midpoint analysis and vector cross products</li>
-          <li>Delivered reusable code — new patients require only changing the input file name</li>
-        </ul>
-      </div>
-
-      <!-- Motion Optimization -->
-      <div class="project">
-        <div class="overline">Prosthetic Simulation</div>
-        <h3>Speed Optimization of Robot Motion via Data Point Reduction</h3>
-        <p class="desc">Compared three algorithms for reducing motion-capture data point counts while preserving trajectory fidelity, enabling faster prosthetic robot motion playback with minimal error.</p>
-        <div class="tags">
-          <span class="tag">MATLAB</span>
-          <span class="tag">Motion capture</span>
-          <span class="tag">Numerical methods</span>
-        </div>
-        <ul class="highlights">
-          <li>Developed Triangle, 2D Trapezoidal Integral, and 3D Trapezoidal Integral reduction methods</li>
-          <li>Triangle method proved most efficient — 402 of 492 points removed with minimal error</li>
-        </ul>
-      </div>
-
-      <!-- VR Gait -->
-      <div class="project">
-        <div class="overline">Motor Behavior Lab · UW–Madison</div>
-        <h3>VR-Based Bimanual Coordination and Gait Study</h3>
-        <p class="desc">Created a Unity VR environment with HTC Vive Pro and Leap Motion to study how visual feedback of each hand affects bimanual grasp coordination, and recorded gait data using motion capture and pressure plates to compare walking in VR versus real environments.</p>
-        <div class="tags">
-          <span class="tag">Unity</span>
-          <span class="tag">C#</span>
-          <span class="tag">HTC Vive Pro</span>
-          <span class="tag">Leap Motion</span>
-          <span class="tag">Motion capture</span>
-          <span class="tag">Force plates</span>
-        </div>
-      </div>
-
-      <!-- Design projects -->
-      <div class="project">
-        <div class="overline">Design &amp; Manufacturing</div>
-        <h3>3D-Printed Airless Bicycle Tire &amp; Injection Molding Simulation</h3>
-        <p class="desc">Designed and 3D-printed an airless bicycle tire using TPU, demonstrating through compressive testing that printed tires can approach traditional performance. Separately, designed a wall hook in SolidWorks, ran FEA in ANSYS APDL for material selection, and simulated the full injection molding process in Moldex3D.</p>
-        <div class="tags">
-          <span class="tag">SolidWorks</span>
-          <span class="tag">FDM / TPU</span>
-          <span class="tag">FEA</span>
-          <span class="tag">ANSYS</span>
-          <span class="tag">Moldex3D</span>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="wrap">
-    <h2 class="section-label">Experience</h2>
-    <div class="exp-list">
-
-      <div class="exp">
-        <span class="dates">Apr 2026 – Present</span>
-        <div>
-          <div class="role">Exoskeleton Intern</div>
-          <div class="org">Institute for Human and Machine Cognition (IHMC)</div>
-          <ul class="details">
-            <li>Built a WiFi-based wireless IMU data acquisition system for real-time motion monitoring</li>
-            <li>Developed a real-time SE₂(3)-based Right-Invariant EKF for humanoid robot state estimation</li>
-            <li>Created a Python log replay and validation pipeline for 1 kHz walking datasets</li>
-          </ul>
-        </div>
+    <div class="project-card">
+      <div class="overline">IHMC · 2026</div>
+      <h3>Right-Invariant EKF for Humanoid State Estimation</h3>
+      <p class="desc">Real-time SE₂(3)-based InEKF fusing IMU, joint encoders, and contact constraints for bipedal locomotion on the ALEX V2 humanoid. Includes a Python replay pipeline for 1 kHz walking data validation.</p>
+      <div class="tags">
+        <span class="tag">InEKF</span>
+        <span class="tag">Lie Groups</span>
+        <span class="tag">Python</span>
+        <span class="tag">MuJoCo</span>
+        <span class="tag">Signal Processing</span>
       </div>
-
-      <div class="exp">
-        <span class="dates">Jul 2025 – Apr 2026</span>
-        <div>
-          <div class="role">Research Assistant</div>
-          <div class="org">Motor Behavior Lab, UW–Madison (PI: Dr. Andrea Mason)</div>
-          <ul class="details">
-            <li>Built a Unity VR environment for studying bimanual grasp coordination</li>
-            <li>Recorded gait data with motion capture and pressure plates for VR vs. real-world comparison</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="exp">
-        <span class="dates">Oct 2025 – Apr 2026</span>
-        <div>
-          <div class="role">Software Engineer</div>
-          <div class="org">Wisconsin Robotics, UW–Madison</div>
-          <ul class="details">
-            <li>Developed a web-based GUI for real-time robot control via ROS topics and rosbridge WebSockets</li>
-            <li>Built a Raspberry Pi facial recognition system with OpenCV and Python</li>
-            <li>12th place at the 2026 University Rover Challenge (Mars Society)</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="exp">
-        <span class="dates">2024</span>
-        <div>
-          <div class="role">Mechanical &amp; Manufacturing Engineering Co-op</div>
-          <div class="org">BW Papersystems, Baltimore, MD</div>
-          <ul class="details">
-            <li>Designed and validated steel transport brackets and fixtures using SolidWorks, FEA, and GD&T</li>
-            <li>Trained electrical assembly technicians, reducing rework by 20%</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="exp">
-        <span class="dates">2017 – 2020</span>
-        <div>
-          <div class="role">Undergraduate Research Assistant</div>
-          <div class="org">Biomedical Microfluidics Lab, University of Utah (PI: Dr. Bruce Gale)</div>
-          <ul class="details">
-            <li>Designed a SolidWorks medical device, improving productivity 17% and reducing costs 30%</li>
-            <li>Researched hydrodynamic cavitation for rapid E. coli O157:H7 detection</li>
-          </ul>
-        </div>
-      </div>
-
     </div>
+
+    <div class="project-card">
+      <div class="overline">Orthopedic Biomechanics</div>
+      <h3>Posterior Facet Landmark Identification on the Calcaneus</h3>
+      <p class="desc">Automated anatomical landmark detection from 3D CT surface models for subtalar joint analysis in ankle osteoarthritis patients. Reusable pipeline using curvature analysis and surface extrema.</p>
+      <div class="tags">
+        <span class="tag">MATLAB</span>
+        <span class="tag">CT Point Clouds</span>
+        <span class="tag">Surface Analysis</span>
+        <span class="tag">3D Visualization</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="overline">Prosthetic Simulation</div>
+      <h3>Robot Motion Speed Optimization via Data Point Reduction</h3>
+      <p class="desc">Compared three algorithms — Triangle, 2D Trapezoidal, and 3D Trapezoidal — for reducing motion-capture data while preserving trajectory fidelity. Triangle method removed 82% of points with minimal error.</p>
+      <div class="tags">
+        <span class="tag">MATLAB</span>
+        <span class="tag">Motion Capture</span>
+        <span class="tag">Numerical Methods</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="overline">Motor Behavior Lab · UW–Madison</div>
+      <h3>VR Bimanual Coordination &amp; Gait Study</h3>
+      <p class="desc">Built a Unity VR environment with HTC Vive Pro and Leap Motion to study hand coordination during grasping. Recorded gait data with motion capture and pressure plates to compare walking in VR vs. real environments.</p>
+      <div class="tags">
+        <span class="tag">Unity</span>
+        <span class="tag">C#</span>
+        <span class="tag">HTC Vive</span>
+        <span class="tag">Leap Motion</span>
+        <span class="tag">Motion Capture</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="overline">Wisconsin Robotics</div>
+      <h3>Rover GUI &amp; Facial Recognition</h3>
+      <p class="desc">Developed a web-based GUI for real-time robot control via ROS/rosbridge WebSockets, and built a Raspberry Pi facial recognition system with OpenCV. 12th place at the 2026 University Rover Challenge.</p>
+      <div class="tags">
+        <span class="tag">ROS</span>
+        <span class="tag">roslibjs</span>
+        <span class="tag">OpenCV</span>
+        <span class="tag">Python</span>
+        <span class="tag">Raspberry Pi</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="overline">Design &amp; Manufacturing</div>
+      <h3>3D-Printed Airless Bicycle Tire</h3>
+      <p class="desc">Designed an airless tire in SolidWorks using the Fill Boundary pattern, 3D-printed in TPU, and validated through compressive testing against traditional pneumatic tires.</p>
+      <div class="tags">
+        <span class="tag">SolidWorks</span>
+        <span class="tag">FDM / TPU</span>
+        <span class="tag">Compressive Testing</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="overline">Undergraduate Thesis · U of Utah</div>
+      <h3>Pathogen Detection via Hydrodynamic Cavitation</h3>
+      <p class="desc">Designed a microfluidic device for rapid separation and electrochemical detection of E. coli O157:H7 using immunomagnetic beads. Improved productivity 17% and reduced costs 30%.</p>
+      <div class="tags">
+        <span class="tag">SolidWorks</span>
+        <span class="tag">ANSYS-CFX</span>
+        <span class="tag">Microfluidics</span>
+        <span class="tag">AutoCAD</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- SKILLS -->
-<section id="skills">
-  <div class="wrap">
-    <h2 class="section-label">Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <h4>Embedded &amp; Signal Processing</h4>
-        <p>Arduino, ESP32, I2C sensor interfacing, Madgwick fusion, PCA-based calibration, quaternion math, real-time UDP streaming</p>
-      </div>
-      <div class="skill-group">
-        <h4>Software</h4>
-        <p>Python, MATLAB, C#, Java, MuJoCo, ROS/roslibjs, OpenCV, Unity, LabVIEW</p>
-      </div>
-      <div class="skill-group">
-        <h4>Simulation &amp; Analysis</h4>
-        <p>FEA (ANSYS), CFD, SolidWorks, Moldex3D, COMSOL, OpenSim, MuJoCo</p>
-      </div>
-      <div class="skill-group">
-        <h4>Experimental Methods</h4>
-        <p>Motion capture, EMG, force plates, pressure plates, metrology/calibration, 3D printing, CNC, injection molding</p>
-      </div>
-    </div>
+<section class="section" id="skills">
+  <h2 class="section-title">My skills</h2>
+  <div class="skills-cloud">
+    <span class="skill-pill">Python</span>
+    <span class="skill-pill">MATLAB</span>
+    <span class="skill-pill">C#</span>
+    <span class="skill-pill">Java</span>
+    <span class="skill-pill">MuJoCo</span>
+    <span class="skill-pill">ROS / roslibjs</span>
+    <span class="skill-pill">OpenCV</span>
+    <span class="skill-pill">Unity</span>
+    <span class="skill-pill">Arduino / ESP32</span>
+    <span class="skill-pill">I2C</span>
+    <span class="skill-pill">Madgwick Fusion</span>
+    <span class="skill-pill">Quaternion Math</span>
+    <span class="skill-pill">PCA Calibration</span>
+    <span class="skill-pill">State Estimation</span>
+    <span class="skill-pill">Signal Processing</span>
+    <span class="skill-pill">Motion Capture</span>
+    <span class="skill-pill">EMG</span>
+    <span class="skill-pill">Force Plates</span>
+    <span class="skill-pill">SolidWorks</span>
+    <span class="skill-pill">Creo / Pro-E</span>
+    <span class="skill-pill">Siemens NX</span>
+    <span class="skill-pill">FEA (ANSYS)</span>
+    <span class="skill-pill">CFD</span>
+    <span class="skill-pill">GD&T</span>
+    <span class="skill-pill">OpenSim</span>
+    <span class="skill-pill">3D Printing</span>
+    <span class="skill-pill">CNC</span>
+    <span class="skill-pill">Injection Molding</span>
+    <span class="skill-pill">Metrology</span>
+    <span class="skill-pill">LabVIEW</span>
+    <span class="skill-pill">Lean Six Sigma</span>
   </div>
 </section>
 
-<!-- PUBLICATIONS -->
-<section id="publications">
-  <div class="wrap">
-    <h2 class="section-label">Publications</h2>
-    <div class="pub">
-      <span class="pub-title">"Detecting Pathogens Using Hydrodynamic Cavitation."</span> University of Utah Annual BME Senior Research Symposium, 2020. Poster.
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <h2 class="section-title">My experience</h2>
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="role">Exoskeleton Intern</div>
+      <div class="org">IHMC · Pensacola, FL</div>
+      <div class="dates">April 2026 – Present</div>
+      <ul class="tl-details">
+        <li>Built a 4-sensor wireless IMU motion capture system streaming at 330 Hz to a live MuJoCo skeleton</li>
+        <li>Developed a real-time SE₂(3)-based InEKF for bipedal humanoid state estimation</li>
+        <li>Created a Python replay and validation pipeline for 1 kHz walking datasets</li>
+      </ul>
     </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="role">Research Assistant</div>
+      <div class="org">Motor Behavior Lab, UW–Madison (PI: Dr. Andrea Mason)</div>
+      <div class="dates">July 2025 – April 2026</div>
+      <ul class="tl-details">
+        <li>Created a Unity VR environment for bimanual grasp coordination research</li>
+        <li>Recorded gait data with motion capture and pressure plates</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="role">Software Engineer</div>
+      <div class="org">Wisconsin Robotics, UW–Madison</div>
+      <div class="dates">October 2025 – April 2026</div>
+      <ul class="tl-details">
+        <li>Developed a web GUI for real-time robot control via ROS and rosbridge WebSockets</li>
+        <li>Built a Raspberry Pi facial recognition system with OpenCV</li>
+        <li>12th place at the 2026 University Rover Challenge</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="role">MS in Mechanical Engineering</div>
+      <div class="org">University of Wisconsin–Madison</div>
+      <div class="dates">Graduated 2024</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="role">Mechanical &amp; Manufacturing Engineering Co-op</div>
+      <div class="org">BW Papersystems · Baltimore, MD</div>
+      <div class="dates">2024</div>
+      <ul class="tl-details">
+        <li>Designed and validated steel transport brackets using SolidWorks, FEA, and GD&T</li>
+        <li>Trained electrical assembly technicians, reducing rework by 20%</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="role">Metrology/Calibration Technician</div>
+      <div class="org">Malema Engineering Corp · Boca Raton, FL</div>
+      <div class="dates">March 2021 – April 2022</div>
+      <ul class="tl-details">
+        <li>Tested and calibrated 10,000+ electronic/mechanical products</li>
+        <li>Created an SOP manual that reduced operation time by 15%</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="role">BS in Biomedical Engineering</div>
+      <div class="org">University of Utah · Minors in Chemistry &amp; Mathematics</div>
+      <div class="dates">Graduated 2020</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="role">Undergraduate Research Assistant</div>
+      <div class="org">Biomedical Microfluidics Lab, University of Utah (PI: Dr. Bruce Gale)</div>
+      <div class="dates">July 2017 – March 2020</div>
+      <ul class="tl-details">
+        <li>Designed a SolidWorks medical device — improved productivity 17%, reduced costs 30%</li>
+        <li>Researched hydrodynamic cavitation for rapid E. coli O157:H7 detection</li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
-  <div class="wrap">
-    <h2 class="section-label">Contact</h2>
-    <p style="color: var(--ink-soft); max-width: var(--measure); margin-bottom: 1.2rem;">I'm currently pursuing PhD opportunities in rehabilitation engineering, biomechanics, and wearable sensing. If you'd like to discuss research or collaboration, I'd love to hear from you.</p>
-    <div class="contact-row">
-      <a href="mailto:Sojin.park.Kim@gmail.com">Sojin.park.Kim@gmail.com</a>
-      <a href="https://www.linkedin.com/in/sojin-p-kim/" target="_blank" rel="noopener">LinkedIn</a>
+<section class="section" id="contact">
+  <h2 class="section-title">Contact me</h2>
+  <div class="contact-section">
+    <p>I'm pursuing PhD opportunities in rehabilitation engineering, biomechanics, and wearable sensing. I'd love to connect about research or collaboration.</p>
+    <div class="contact-links">
+      <a href="mailto:Sojin.park.Kim@gmail.com">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        Sojin.park.Kim@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/in/sojin-p-kim/" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/sojin-p-kim" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+        GitHub
+      </a>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">&copy; 2026 Sojin Kim</div>
+  <p>&copy; 2026 Sojin Kim. All rights reserved.</p>
 </footer>
 
 </body>
