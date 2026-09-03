@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D-Printed Airless Bicycle Tire — Sojin Kim</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#f8f9fa;--bg-card:#ffffff;--text:#111827;--text-mid:#4b5563;--text-light:#9ca3af;
+  --accent:#6366f1;--accent-light:#eef2ff;--border:#e5e7eb;--radius:12px;
+  --shadow-lg:0 10px 25px rgba(0,0,0,.07),0 4px 10px rgba(0,0,0,.04);
+  --font:'Inter',system-ui,-apple-system,sans-serif;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(248,249,250,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.85rem 0}
+.nav-inner{max-width:860px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav-name{font-weight:700;font-size:1rem;color:var(--text)}
+.back-link{font-size:.875rem;font-weight:500;color:var(--text-mid);display:inline-flex;align-items:center;gap:.3rem}
+.back-link:hover{color:var(--text);text-decoration:none}
+
+.project-page{max-width:860px;margin:0 auto;padding:3rem 2rem 4rem}
+.project-page h1{font-size:2.2rem;font-weight:800;line-height:1.25;margin-bottom:.6rem}
+.project-meta{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;margin-bottom:2rem}
+.project-meta .meta-item{font-size:.85rem;color:var(--text-light);display:inline-flex;align-items:center;gap:.3rem}
+.project-meta .meta-item svg{width:15px;height:15px}
+
+.project-hero-img{
+  width:100%;border-radius:var(--radius);margin-bottom:2rem;
+  box-shadow:var(--shadow-lg);max-height:450px;object-fit:cover;
+}
+
+.project-page h2{font-size:1.3rem;font-weight:700;margin:2.5rem 0 .8rem;padding-top:1rem;border-top:1px solid var(--border)}
+.project-page h2:first-of-type{border-top:none;padding-top:0}
+.project-page p{color:var(--text-mid);margin-bottom:1rem;max-width:68ch;line-height:1.75}
+.project-page ul{color:var(--text-mid);padding-left:1.3rem;margin-bottom:1rem}
+.project-page ul li+li{margin-top:.4rem}
+.project-page ul li{line-height:1.65}
+
+.tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:2rem}
+.tag{font-size:.72rem;font-weight:600;padding:.25rem .65rem;border-radius:20px;background:var(--accent-light);color:var(--accent)}
+
+.img-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:1.5rem 0}
+.img-grid img{width:100%;border-radius:8px;border:1px solid var(--border)}
+.img-caption{font-size:.8rem;color:var(--text-light);text-align:center;margin-top:.4rem}
+
+.result-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin:1.5rem 0}
+.stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1rem 1.2rem}
+.stat-card .stat-num{font-size:1.5rem;font-weight:800;color:var(--accent)}
+.stat-card .stat-label{font-size:.8rem;color:var(--text-light);margin-top:.2rem}
+
+.source-note{
+  font-size:.82rem;color:var(--text-light);background:var(--bg-card);
+  border:1px solid var(--border);border-radius:8px;padding:.7rem 1rem;margin-top:.5rem;
+}
+
+.github-btn{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-size:.9rem;font-weight:600;color:var(--accent);
+  padding:.5rem 1rem;border:1px solid var(--border);border-radius:8px;
+  transition:all .15s;margin-top:1rem;
+}
+.github-btn:hover{border-color:var(--accent);text-decoration:none}
+.github-btn svg{width:18px;height:18px}
+
+footer{max-width:860px;margin:0 auto;padding:2rem;text-align:center;font-size:.78rem;color:var(--text-light);border-top:1px solid var(--border)}
+
+@media(max-width:768px){
+  .project-page{padding:2rem 1.5rem 3rem}
+  .project-page h1{font-size:1.7rem}
+  .img-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../" class="nav-name">Sojin Kim</a>
+    <a href="../#projects" class="back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      All projects
+    </a>
+  </div>
+</nav>
+
+<article class="project-page">
+
+  <h1>3D-Printed Airless Bicycle Tire</h1>
+  <div class="project-meta">
+    <span class="meta-item">Polymer Engineering Center, UW–Madison · 2024</span>
+    <span class="meta-item">·</span>
+    <span class="meta-item">Hexagonal lattice design for a puncture-proof, 3D-printed tire</span>
+  </div>
+
+  <div class="tags">
+    <span class="tag">SolidWorks</span>
+    <span class="tag">FDM / TPU</span>
+    <span class="tag">Fill Boundary Pattern</span>
+    <span class="tag">Compression Testing</span>
+    <span class="tag">Stratasys F370</span>
+    <span class="tag">Bambu Lab X1 Carbon</span>
+  </div>
+
+  <img class="project-hero-img" src="../images/airless-tire.jpg" alt="3D-printed airless bicycle tire with hexagonal lattice structure">
+
+  <h2>Overview</h2>
+  <p>A team project to design and 3D print an airless bicycle tire that eliminates the risk of flats from punctures. Non-pneumatic tires (NPTs) remove air pressure from the equation entirely, but the challenge is replicating the ride comfort a pneumatic tire gets from air with a printable solid structure instead. Our approach: a hexagonal lattice inner structure, printed in flexible TPU, tuned by iterating on cell size and spacing.</p>
+
+  <h2>Design</h2>
+  <p>Existing airless tire designs generally fall into curved (automotive), circular (bicycle), or lattice patterns. We designed a hexagonal lattice specifically for a bicycle tire, since honeycomb geometry tessellates with no wasted material, distributes impact loads evenly, and is well known for strong energy absorption relative to its weight.</p>
+  <p>The tire matches standard 700×23c road tire dimensions — 700 mm outer diameter, 23 mm width — with the inner diameter opened up to 460 mm to fit more hexagonal cells. Each hexagon was set to a 5 mm diameter; after testing showed a 1 mm cell spacing caused excessive deformation, 2.5 mm spacing was selected as the best balance between structural integrity and print cost.</p>
+
+  <h2>Material &amp; manufacturing</h2>
+  <p>Thermoplastic polyurethane (TPU) was selected for its rubber-like elasticity and durability — TPU 92A has a Shore hardness of 92 and 550% elongation at break, comparable to natural rubber. The lattice was modeled in SolidWorks using the <strong>Fill Boundary pattern</strong> feature, then printed via Fused Deposition Modeling (FDM) on a Stratasys F370 and later a Bambu Lab X1 Carbon after a print-head jam and filament shortage forced a printer switch mid-project.</p>
+
+  <div class="img-grid">
+    <img src="../images/tire-section.jpg" alt="CAD render of a curved tire section showing the hexagonal lattice">
+    <img src="../images/tire-print.jpg" alt="3D-printed TPU tire section after fabrication">
+  </div>
+  <p class="img-caption">CAD model (left) vs. the printed TPU section used for compression testing (right)</p>
+
+  <h2>Testing</h2>
+  <p>Since the load on a bike tire is carried mainly through sidewall compression and spoke tension rather than internal air pressure, testing centered on compressive loading of printed sections. A flat rectangular section (Stratasys print) was loaded vertically to a normalized stress–strain curve, while a curved section (Bambu print) was loaded through a metal rod proxy to simulate contact-patch loading.</p>
+  <ul>
+    <li>The flat section showed a linear stress–strain response up to ~6.5% strain, after which the part began to buckle sideways rather than deform structurally</li>
+    <li>The curved section held up to 400,000 N/m² with no permanent deformation and fully recovered within about a second of load removal — deformation stayed local to the load point rather than spreading through the structure</li>
+    <li>Observed strain rates were in a similar range to a typical pneumatic tire under normal riding loads</li>
+  </ul>
+
+  <h2>Results</h2>
+  <div class="result-stats">
+    <div class="stat-card"><div class="stat-num">700×23c</div><div class="stat-label">standard road tire fit</div></div>
+    <div class="stat-card"><div class="stat-num">2.5 mm</div><div class="stat-label">optimal hexagon spacing</div></div>
+    <div class="stat-card"><div class="stat-num">6.5%</div><div class="stat-label">strain before buckling</div></div>
+    <div class="stat-card"><div class="stat-num">400,000 N/m²</div><div class="stat-label">stress with zero permanent deformation</div></div>
+  </div>
+  <p>All deformation observed stayed within the elastic regime — no permanent damage occurred in either compression test, demonstrating that a 3D-printed hexagonal-lattice TPU tire can plausibly replace a pneumatic tire's shock absorption without air pressure.</p>
+
+  <h2>Future work</h2>
+  <ul>
+    <li>Evaluate heat dissipation under sustained riding friction</li>
+    <li>Test fiber-reinforced TPU filaments to reduce buckling and localized deformation</li>
+    <li>Build and test a full-scale tire under real road conditions rather than isolated sections</li>
+    <li>Resolve print-reliability issues (head jams, filament availability) for longer full-scale prints</li>
+  </ul>
+
+  <h2>Skills gained</h2>
+  <ul>
+    <li>Lattice/lightweight structure design in SolidWorks (Fill Boundary patterning)</li>
+    <li>FDM printing with flexible filaments (TPU), across two different printer platforms</li>
+    <li>Mechanical testing: compression testing, stress–strain normalization, elastic vs. plastic deformation analysis</li>
+    <li>Technical writing and literature review for a multi-author engineering report</li>
+  </ul>
+
+  <p class="source-note">Full project report co-authored with Jessica Lim, Ting-Chun Lee, and Zhaohui Ma, published by the UW–Madison Additive Manufacturing / Polymer Engineering Center: <a href="https://additive-mfg.me.wisc.edu/?p=3728" target="_blank" rel="noopener">additive-mfg.me.wisc.edu</a></p>
+
+</article>
+
+<footer>
+  <p>&copy; 2026 Sojin Kim</p>
+</footer>
+
+</body>
+</html>
